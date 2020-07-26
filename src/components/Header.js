@@ -14,7 +14,7 @@ const useStyles = makeStyles({
 
 function Header() {
   const classes = useStyles();
-  return <div className={classes.root}>NYMC Online</div>;
+  return <div className={classes.root}>NYMC Membership Card </div>;
 }
 
 export default Header;

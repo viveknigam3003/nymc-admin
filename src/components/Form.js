@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { TextField, makeStyles } from "@material-ui/core";
+import { TextField, makeStyles, Button, ButtonGroup } from "@material-ui/core";
 import MemberCard from "./MemberCard";
 import ImageUploading from "react-images-uploading";
 
@@ -31,6 +31,7 @@ function Form() {
     setImage(imageList);
     setUploaded(true)
   };
+
   const onError = (errors, files) => {
     console.log(errors, files);
   };
@@ -96,6 +97,7 @@ function Form() {
           defaultValue={end}
           onChange={(e) => setEnd(e.target.value)}
         />
+        <div style={{fontFamily: "Work Sans", fontSize: 12, opacity: 0.8, padding: 10}}>Upload Candidate Image</div>
         <ImageUploading
           onChange={onChange}
           maxFileSize={maxMbFileSize}
@@ -103,10 +105,10 @@ function Form() {
           onError={onError}
         >
           {({ onImageUpload, onImageRemoveAll }) => (
-            <div>
-              <button onClick={onImageUpload}>Upload images</button>
-              <button onClick={() => {setUploaded(false); return onImageRemoveAll}}>Remove all images</button>
-            </div>
+            <ButtonGroup>
+              <Button variant="outlined" color="primary" onClick={onImageUpload}>Upload image</Button>
+              <Button variant="outlined" color="secondary" disabled={!uploaded} onClick={() => {setUploaded(false); return onImageRemoveAll}}>Remove image</Button>
+            </ButtonGroup>
           )}
         </ImageUploading>
       </form>
