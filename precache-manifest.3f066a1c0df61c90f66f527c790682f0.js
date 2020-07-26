@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "db5d505a6ec6a4b73790d16fbd57e3b2",
+    "revision": "5d45ce7adbb547941557dcc6b136d86c",
     "url": "/nymc-admin/index.html"
   },
   {
-    "revision": "ac22f9aad9b1b87315ed",
-    "url": "/nymc-admin/static/css/main.40fafe39.chunk.css"
+    "revision": "385c7ce4b37a250fac64",
+    "url": "/nymc-admin/static/css/main.4742f037.chunk.css"
   },
   {
     "revision": "7100274de4105469f0bd",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/nymc-admin/static/js/2.249950df.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "ac22f9aad9b1b87315ed",
-    "url": "/nymc-admin/static/js/main.6371c3aa.chunk.js"
+    "revision": "385c7ce4b37a250fac64",
+    "url": "/nymc-admin/static/js/main.4de1a2a6.chunk.js"
   },
   {
     "revision": "67b019604aa71579eb46",
