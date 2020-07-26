@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { TextField, makeStyles } from "@material-ui/core";
 import MemberCard from "./MemberCard";
+import ImageUploading from "react-images-uploading";
+
+const maxMbFileSize = 5 * 1024 * 1024;
 
 const useStyles = makeStyles({
   root: {
@@ -19,8 +22,18 @@ function Form() {
   const [valid, setValid] = useState("");
   const [start, setStart] = useState("");
   const [end, setEnd] = useState("");
+  const [image, setImage] = useState([]);
+  const [uploaded, setUploaded] = useState(false)
 
   const handleSubmit = () => console.log("YO");
+
+  const onChange = (imageList) => {
+    setImage(imageList);
+    setUploaded(true)
+  };
+  const onError = (errors, files) => {
+    console.log(errors, files);
+  };
 
   return (
     <React.Fragment>
@@ -34,6 +47,7 @@ function Form() {
           type="name"
           id="password"
           size="small"
+          defaultValue={name}
           onChange={(e) => setName(e.target.value)}
         />
         <TextField
@@ -45,6 +59,7 @@ function Form() {
           type="membership-start"
           id="membership-start"
           size="small"
+          defaultValue={issued}
           onChange={(e) => setIssued(e.target.value)}
         />
         <TextField
@@ -56,6 +71,7 @@ function Form() {
           type="membership-end"
           id="membership-end"
           size="small"
+          defaultValue={valid}
           onChange={(e) => setValid(e.target.value)}
         />
         <TextField
@@ -66,6 +82,7 @@ function Form() {
           type="start-date"
           id="start-date"
           size="small"
+          defaultValue={start}
           onChange={(e) => setStart(e.target.value)}
         />
         <TextField
@@ -76,8 +93,22 @@ function Form() {
           type="string"
           id="end-date"
           size="small"
+          defaultValue={end}
           onChange={(e) => setEnd(e.target.value)}
         />
+        <ImageUploading
+          onChange={onChange}
+          maxFileSize={maxMbFileSize}
+          acceptType={["jpg", "gif", "png"]}
+          onError={onError}
+        >
+          {({ onImageUpload, onImageRemoveAll }) => (
+            <div>
+              <button onClick={onImageUpload}>Upload images</button>
+              <button onClick={() => {setUploaded(false); return onImageRemoveAll}}>Remove all images</button>
+            </div>
+          )}
+        </ImageUploading>
       </form>
       <MemberCard
         name={name}
@@ -85,6 +116,8 @@ function Form() {
         valid={valid}
         start={start}
         end={end}
+        image={image}
+        uploaded={uploaded}
       />
     </React.Fragment>
   );

@@ -4,6 +4,7 @@ import { exportComponentAsJPEG } from "react-component-export-image";
 import { makeStyles, Button } from "@material-ui/core";
 import { green } from "@material-ui/core/colors";
 import Logo from "./Logo";
+import StudentImage from "./StudentImage";
 
 const useStyles = makeStyles({
   root: {
@@ -36,7 +37,7 @@ const useStyles = makeStyles({
     paddingLeft: 10,
     paddingRight: 10,
     color: "#000000",
-    opacity: 0.8
+    opacity: 0.8,
   },
   details: {
     padding: 10,
@@ -55,8 +56,13 @@ const useStyles = makeStyles({
   },
   values: {
     color: "#000000",
-    opacity: 0.8
-  }
+    opacity: 0.8,
+  },
+  cont: {
+    display: "flex",
+    alignItems: "flex-start",
+    justifyContent: "space-between",
+  },
 });
 
 function MemberCard(props) {
@@ -69,6 +75,8 @@ function MemberCard(props) {
     valid: props.valid,
     start: props.start,
     end: props.end,
+    image: props.image,
+    uploaded: props.uploaded
   };
 
   const ComponentToPrint = React.forwardRef((props, ref) => (
@@ -80,22 +88,25 @@ function MemberCard(props) {
       <div id="sub" className={classes.sub}>
         E-Membership Card
       </div>
-      <div id="details" className={classes.details}>
-        <div id="name" className={classes.fields}>
-          Name: <span className={classes.values}>{info.name}</span>{" "}
+      <div id="left" className={classes.cont}>
+        <div id="details" className={classes.details}>
+          <div id="name" className={classes.fields}>
+            Name: <span className={classes.values}>{info.name}</span>{" "}
+          </div>
+          <div id="issued" className={classes.fields}>
+            Issued: <span className={classes.values}>{info.issued}</span>{" "}
+          </div>
+          <div id="valid" className={classes.fields}>
+            Valid Thru: <span className={classes.values}>{info.valid}</span>{" "}
+          </div>
+          <div id="start" className={classes.fields}>
+            Plan Start: <span className={classes.values}>{info.start}</span>{" "}
+          </div>
+          <div id="end" className={classes.fields}>
+            Plan End: <span className={classes.values}>{info.end}</span>{" "}
+          </div>
         </div>
-        <div id="issued" className={classes.fields}>
-          Issued: <span className={classes.values}>{info.issued}</span>{" "}
-        </div>
-        <div id="valid" className={classes.fields}>
-          Valid Thru: <span className={classes.values}>{info.valid}</span>{" "}
-        </div>
-        <div id="start" className={classes.fields}>
-          Plan Start: <span className={classes.values}>{info.start}</span>{" "}
-        </div>
-        <div id="end" className={classes.fields}>
-          Plan End: <span className={classes.values}>{info.end}</span>{" "}
-        </div>
+        <StudentImage src={info.image} uploaded={info.uploaded}/>
       </div>
     </div>
   ));
