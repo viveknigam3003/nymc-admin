@@ -31,27 +31,32 @@ const useStyles = makeStyles({
   sub: {
     textAlign: "left",
     width: "50%",
-    fontFamily: "Open Sans",
+    fontFamily: "Work Sans",
     fontSize: 10,
     paddingLeft: 10,
     paddingRight: 10,
+    color: "#000000",
+    opacity: 0.8
   },
   details: {
     padding: 10,
     display: "flex",
     height: "30mm",
     alignItems: "start",
-    justifyContent: "space-between",
+    justifyContent: "space-evenly",
     flexDirection: "column",
     fontFamily: "Work Sans",
     fontSize: 12,
     fontWeight: 500,
     opacity: 0.8,
-    color: green[800],
   },
   btn: {
     margin: 10,
   },
+  values: {
+    color: "#000000",
+    opacity: 0.8
+  }
 });
 
 function MemberCard(props) {
@@ -77,19 +82,19 @@ function MemberCard(props) {
       </div>
       <div id="details" className={classes.details}>
         <div id="name" className={classes.fields}>
-          Name: {info.name}{" "}
+          Name: <span className={classes.values}>{info.name}</span>{" "}
         </div>
         <div id="issued" className={classes.fields}>
-          Issued: {info.issued}{" "}
+          Issued: <span className={classes.values}>{info.issued}</span>{" "}
         </div>
         <div id="valid" className={classes.fields}>
-          Valid Thru: {info.valid}{" "}
+          Valid Thru: <span className={classes.values}>{info.valid}</span>{" "}
         </div>
         <div id="start" className={classes.fields}>
-          Plan Start: {info.start}{" "}
+          Plan Start: <span className={classes.values}>{info.start}</span>{" "}
         </div>
         <div id="end" className={classes.fields}>
-          Plan End: {info.end}{" "}
+          Plan End: <span className={classes.values}>{info.end}</span>{" "}
         </div>
       </div>
     </div>
