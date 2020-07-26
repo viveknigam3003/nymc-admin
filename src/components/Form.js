@@ -3,7 +3,7 @@ import { TextField, makeStyles, Button, ButtonGroup } from "@material-ui/core";
 import MemberCard from "./MemberCard";
 import ImageUploading from "react-images-uploading";
 
-const maxMbFileSize = 5 * 1024 * 1024;
+const maxMbFileSize = 10 * 1024 * 1024;
 
 const useStyles = makeStyles({
   root: {

@@ -5,7 +5,7 @@ import { green } from "@material-ui/core/colors";
 const useStyles = makeStyles({
   root: {
     position: "relative",
-    height: 50,
+    height: 80,
     margin: 20,
     width: "auto",
     display: "flex",
