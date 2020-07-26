@@ -101,7 +101,7 @@ function Form() {
         <ImageUploading
           onChange={onChange}
           maxFileSize={maxMbFileSize}
-          acceptType={["jpg", "gif", "png"]}
+          acceptType={["jpg", "gif", "png", "jpeg"]}
           onError={onError}
         >
           {({ onImageUpload, onImageRemoveAll }) => (
