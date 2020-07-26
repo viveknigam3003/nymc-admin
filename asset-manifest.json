@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/nymc-admin/static/css/main.40fafe39.chunk.css",
-    "main.js": "/nymc-admin/static/js/main.4657a6e7.chunk.js",
-    "main.js.map": "/nymc-admin/static/js/main.4657a6e7.chunk.js.map",
+    "main.js": "/nymc-admin/static/js/main.6371c3aa.chunk.js",
+    "main.js.map": "/nymc-admin/static/js/main.6371c3aa.chunk.js.map",
     "runtime-main.js": "/nymc-admin/static/js/runtime-main.e630821b.js",
     "runtime-main.js.map": "/nymc-admin/static/js/runtime-main.e630821b.js.map",
-    "static/js/2.427ad8b5.chunk.js": "/nymc-admin/static/js/2.427ad8b5.chunk.js",
-    "static/js/2.427ad8b5.chunk.js.map": "/nymc-admin/static/js/2.427ad8b5.chunk.js.map",
+    "static/js/2.249950df.chunk.js": "/nymc-admin/static/js/2.249950df.chunk.js",
+    "static/js/2.249950df.chunk.js.map": "/nymc-admin/static/js/2.249950df.chunk.js.map",
     "index.html": "/nymc-admin/index.html",
-    "precache-manifest.9d13b03d78905755a312e3e5f3f5158d.js": "/nymc-admin/precache-manifest.9d13b03d78905755a312e3e5f3f5158d.js",
+    "precache-manifest.65ac1ebc5e1a5af20e1da1e811ce47d9.js": "/nymc-admin/precache-manifest.65ac1ebc5e1a5af20e1da1e811ce47d9.js",
     "service-worker.js": "/nymc-admin/service-worker.js",
     "static/css/main.40fafe39.chunk.css.map": "/nymc-admin/static/css/main.40fafe39.chunk.css.map",
-    "static/js/2.427ad8b5.chunk.js.LICENSE.txt": "/nymc-admin/static/js/2.427ad8b5.chunk.js.LICENSE.txt",
+    "static/js/2.249950df.chunk.js.LICENSE.txt": "/nymc-admin/static/js/2.249950df.chunk.js.LICENSE.txt",
     "static/media/logo.png": "/nymc-admin/static/media/logo.3091eb96.png"
   },
   "entrypoints": [
     "static/js/runtime-main.e630821b.js",
-    "static/js/2.427ad8b5.chunk.js",
+    "static/js/2.249950df.chunk.js",
     "static/css/main.40fafe39.chunk.css",
-    "static/js/main.4657a6e7.chunk.js"
+    "static/js/main.6371c3aa.chunk.js"
   ]
 }
