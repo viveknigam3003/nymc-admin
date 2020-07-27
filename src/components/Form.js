@@ -7,7 +7,7 @@ const maxMbFileSize = 10 * 1024 * 1024;
 
 const useStyles = makeStyles({
   root: {
-    width: "100%",
+    minWidth: "30%",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -44,6 +44,7 @@ function Form() {
           variant="outlined"
           margin="normal"
           required
+          fullWidth
           name="id"
           label="NYMC ID"
           type="id"
@@ -56,6 +57,7 @@ function Form() {
           variant="outlined"
           margin="normal"
           required
+          fullWidth
           name="name"
           label="Name"
           type="name"
@@ -68,9 +70,10 @@ function Form() {
           variant="outlined"
           margin="normal"
           required
+          fullWidth
           width="inherit"
           name="membership-start"
-          helperText="Membership Start Date"
+          label="Membership Start Date"
           type="date"
           id="membership-start"
           size="small"
@@ -81,8 +84,9 @@ function Form() {
           variant="outlined"
           margin="normal"
           required
+          fullWidth
           name="valid-through"
-          helperText="Membership Valid Thru"
+          label="Membership Valid Thru"
           type="date"
           id="membership-end"
           size="small"
@@ -93,22 +97,24 @@ function Form() {
           variant="outlined"
           margin="normal"
           name="start-date"
-          helperText="Plan Start Date"
+          label="Plan Start Date"
           type="date"
           id="start-date"
           size="small"
           defaultValue={start}
+          fullWidth
           onChange={(e) => setStart(e.target.value)}
         />
         <TextField
           variant="outlined"
           margin="normal"
           name="endDate"
-          helperText="Plan End Date"
+          label="Plan End Date"
           type="date"
           id="end-date"
           size="small"
           defaultValue={end}
+          fullWidth
           onChange={(e) => setEnd(e.target.value)}
         />
         <div style={{fontFamily: "Work Sans", fontSize: 12, opacity: 0.8, padding: 10}}>Upload Candidate Image</div>
