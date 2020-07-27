@@ -70,6 +70,7 @@ function MemberCard(props) {
   const componentRef = useRef();
 
   const info = {
+    id: props.id,
     name: props.name,
     issued: props.issued,
     valid: props.valid,
@@ -90,6 +91,9 @@ function MemberCard(props) {
       </div>
       <div id="left" className={classes.cont}>
         <div id="details" className={classes.details}>
+        <div id="nymc-id" className={classes.fields}>
+            ID: <span className={classes.values}>{info.id}</span>{" "}
+          </div>
           <div id="name" className={classes.fields}>
             Name: <span className={classes.values}>{info.name}</span>{" "}
           </div>

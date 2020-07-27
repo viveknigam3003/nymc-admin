@@ -7,7 +7,7 @@ const maxMbFileSize = 10 * 1024 * 1024;
 
 const useStyles = makeStyles({
   root: {
-    width: "100%",
+    width: "50%",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -17,11 +17,12 @@ const useStyles = makeStyles({
 
 function Form() {
   const classes = useStyles();
+  const [id, setID] = useState("");
   const [name, setName] = useState("");
-  const [issued, setIssued] = useState("");
-  const [valid, setValid] = useState("");
-  const [start, setStart] = useState("");
-  const [end, setEnd] = useState("");
+  const [issued, setIssued] = useState();
+  const [valid, setValid] = useState();
+  const [start, setStart] = useState();
+  const [end, setEnd] = useState();
   const [image, setImage] = useState([]);
   const [uploaded, setUploaded] = useState(false)
 
@@ -39,6 +40,18 @@ function Form() {
   return (
     <React.Fragment>
       <form className={classes.root} id="member-form" onSubmit={handleSubmit}>
+      <TextField
+          variant="outlined"
+          margin="normal"
+          required
+          name="id"
+          label="NYMC ID"
+          type="id"
+          id="nymc-id"
+          size="small"
+          defaultValue={id}
+          onChange={(e) => setID(e.target.value)}
+        />
         <TextField
           variant="outlined"
           margin="normal"
@@ -46,7 +59,7 @@ function Form() {
           name="name"
           label="Name"
           type="name"
-          id="password"
+          id="name"
           size="small"
           defaultValue={name}
           onChange={(e) => setName(e.target.value)}
@@ -56,8 +69,8 @@ function Form() {
           margin="normal"
           required
           name="membership-start"
-          label="Membership Start Date"
-          type="membership-start"
+          helperText="Membership Start Date"
+          type="date"
           id="membership-start"
           size="small"
           defaultValue={issued}
@@ -68,8 +81,8 @@ function Form() {
           margin="normal"
           required
           name="valid-through"
-          label="Membership Valid Through"
-          type="membership-end"
+          helperText="Membership Valid Through"
+          type="date"
           id="membership-end"
           size="small"
           defaultValue={valid}
@@ -79,8 +92,8 @@ function Form() {
           variant="outlined"
           margin="normal"
           name="start-date"
-          label="Plan Start Date"
-          type="start-date"
+          helperText="Plan Start Date"
+          type="date"
           id="start-date"
           size="small"
           defaultValue={start}
@@ -90,8 +103,8 @@ function Form() {
           variant="outlined"
           margin="normal"
           name="endDate"
-          label="Plan End Date"
-          type="string"
+          helperText="Plan End Date"
+          type="date"
           id="end-date"
           size="small"
           defaultValue={end}
@@ -113,6 +126,7 @@ function Form() {
         </ImageUploading>
       </form>
       <MemberCard
+        id={id}
         name={name}
         issued={issued}
         valid={valid}
