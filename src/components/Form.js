@@ -7,7 +7,7 @@ const maxMbFileSize = 10 * 1024 * 1024;
 
 const useStyles = makeStyles({
   root: {
-    width: "50%",
+    width: "100%",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -68,6 +68,7 @@ function Form() {
           variant="outlined"
           margin="normal"
           required
+          width="inherit"
           name="membership-start"
           helperText="Membership Start Date"
           type="date"
@@ -81,7 +82,7 @@ function Form() {
           margin="normal"
           required
           name="valid-through"
-          helperText="Membership Valid Through"
+          helperText="Membership Valid Thru"
           type="date"
           id="membership-end"
           size="small"
