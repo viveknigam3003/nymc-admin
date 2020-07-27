@@ -78,6 +78,7 @@ function Form() {
           id="membership-start"
           size="small"
           defaultValue={issued}
+          InputLabelProps={{ shrink: true }}
           onChange={(e) => setIssued(e.target.value)}
         />
         <TextField
@@ -91,6 +92,7 @@ function Form() {
           id="membership-end"
           size="small"
           defaultValue={valid}
+          InputLabelProps={{ shrink: true }}
           onChange={(e) => setValid(e.target.value)}
         />
         <TextField
@@ -103,6 +105,7 @@ function Form() {
           size="small"
           defaultValue={start}
           fullWidth
+          InputLabelProps={{ shrink: true }}
           onChange={(e) => setStart(e.target.value)}
         />
         <TextField
@@ -115,6 +118,7 @@ function Form() {
           size="small"
           defaultValue={end}
           fullWidth
+          InputLabelProps={{ shrink: true }}
           onChange={(e) => setEnd(e.target.value)}
         />
         <div style={{fontFamily: "Work Sans", fontSize: 12, opacity: 0.8, padding: 10}}>Upload Candidate Image</div>
